@@ -20,7 +20,7 @@ public class Rotation : MonoBehaviour {
 		new Quaternion(this.character.rotation.x,this.character.rotation.y,this.character.rotation.z,-this.character.rotation.w), 0.03f);
 
 		//this.transform.Rotate (Vector3.forward,(int) this.transform.rotation.z + (Time.deltaTime * 30.0f), Space.World);
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.R)) {
 			orientation_z += 90.0f * Mathf.Pow(-1,sentidoDeGiro);
 			if (Mathf.Abs(orientation_z - 360.0f) < Mathf.Epsilon)
 				orientation_z = 0.0f;

@@ -31,12 +31,14 @@ public class EstadosGato : MonoBehaviour {
 			}
 			if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey (KeyCode.RightArrow)) {
 				caminar();
+				// como tambien puede saltar, preguntamos si esta saltando
+				saltar();
 			}
 
 			// Si el gato no se mueve puede estar quieto o saltando:
 			if (!Input.GetKey (KeyCode.LeftArrow) && !Input.GetKey (KeyCode.RightArrow)) {
 				if (Input.GetKey (KeyCode.Space)) {
-					//saltar();
+					saltar();
 				} else {
 					sentar();
 				}
@@ -45,10 +47,6 @@ public class EstadosGato : MonoBehaviour {
 	}
 
 	void saltar() {
-		/*Vector2 v0 = new Vector2 (0f, 500f);
-		float t = Time.deltaTime;
-		v0.y = v0.y*t-0.5f*50f*(t*t);
-		rigidbody2D.velocity = new Vector2 (0,(float) v0.y);*/
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			rigidbody2D.AddForce (Vector2.up * 300f);
 		}
