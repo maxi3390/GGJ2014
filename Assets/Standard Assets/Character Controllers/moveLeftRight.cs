@@ -2,17 +2,8 @@
 using System.Collections;
 
 public class moveLeftRight : MonoBehaviour {
-<<<<<<< HEAD
-	public float speed =10.0f;
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			print ("Salta");
-			Vector3 newScale =transform.localScale;
-			transform.position += transform.up * speed * /*Time.deltaTime*/ 0.1f;
-=======
-	public float speed =5f;
+	public float speed = 5f;
+	public bool mueveDerecha = true;
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -20,8 +11,6 @@ public class moveLeftRight : MonoBehaviour {
 			print ("Salta");
 			Vector3 newScale =transform.localScale;
 			transform.position += transform.up * 3f;
-		
->>>>>>> local
 		}
 		/*if (Input.GetKey(KeyCode.DownArrow)) {
 			return;
