@@ -12,7 +12,7 @@ public class Rotation : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		this.transform.rotation = Quaternion.Slerp (this.transform.rotation, quat_dest, 0.1f);
+		this.transform.rotation = Quaternion.Slerp (this.transform.rotation, quat_dest, 0.04f);
 
 		//this.transform.Rotate (Vector3.forward,(int) this.transform.rotation.z + (Time.deltaTime * 30.0f), Space.World);
 		if (Input.GetKeyDown (KeyCode.Space)) {
