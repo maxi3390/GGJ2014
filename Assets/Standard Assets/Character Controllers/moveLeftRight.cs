@@ -2,14 +2,15 @@
 using System.Collections;
 
 public class moveLeftRight : MonoBehaviour {
-	public float speed =10.0f;
+	public float speed =5f;
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetKeyDown(KeyCode.Space) && this.collider2D) {
 			print ("Salta");
 			Vector3 newScale =transform.localScale;
-			transform.position += transform.up * speed * /*Time.deltaTime*/ 0.1f;
+			transform.position += transform.up * 3f;
+		
 		}
 		/*if (Input.GetKey(KeyCode.DownArrow)) {
 			return;
