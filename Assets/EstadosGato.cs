@@ -3,9 +3,8 @@ using System.Collections;
 
 public class EstadosGato : MonoBehaviour {
 
-	public bool mueveDerecha = false;
-	public bool moviendo = false;
-	//public bool mueveDerecha = false;
+	//private bool mueveDerecha = false;
+	//private bool moviendo = false;
 
 	// Use this for initialization
 	void Start () {
