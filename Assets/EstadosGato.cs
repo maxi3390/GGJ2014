@@ -63,7 +63,7 @@ public class EstadosGato : MonoBehaviour {
 			// Si el gato no se mueve puede estar quieto o saltando:
 			if (!Input.GetKey (KeyCode.LeftArrow) && !Input.GetKey (KeyCode.RightArrow)) {
 				if (Input.GetKey (KeyCode.Space)) {
-					saltar();
+					//saltar();
 				} else {
 					sentar();
 				}
