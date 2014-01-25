@@ -3,11 +3,11 @@ using System.Collections;
 
 public class moveLeftRight : MonoBehaviour {
 	public float speed = 5f;
-	public bool mueveDerecha = true;
+
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Input.GetKeyDown(KeyCode.Space) && this.collider2D) {
+		/*if (Input.GetKeyDown(KeyCode.Space) && this.collider2D) {
 			print ("Salta");
 			Vector3 newScale =transform.localScale;
 			transform.position += transform.up * 3f;
@@ -17,7 +17,7 @@ public class moveLeftRight : MonoBehaviour {
 			print ("Baja");
 			Vector3 newScale =transform.localScale;
 			//transform.position += - * speed * Time.deltaTime;
-		}*/
+		}
 		if (Input.GetKey(KeyCode.LeftArrow)) {
 			print ("Mueve a la izquierda");
 			Vector3 newScale =transform.localScale;
@@ -28,6 +28,6 @@ public class moveLeftRight : MonoBehaviour {
 			Vector3 newScale =transform.localScale;
 			transform.position += transform.right * speed * Time.deltaTime;
 		}
-		
+		*/
 	}
 }
