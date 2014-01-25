@@ -13,37 +13,10 @@ public class EstadosGato : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	/*	if (Input.GetKey (KeyCode.LeftArrow)) {
-			moviendo = true;
-			if (mueveDerecha) {
-				this.transform.Rotate (0, 180, 0);
-				mueveDerecha = false;
-			}
-			this.GetComponent<Animator> ().SetBool ("isSaltando", false);
-			this.GetComponent<Animator> ().SetBool ("isCaminando", true);
-		}
-		if (Input.GetKey (KeyCode.RightArrow)) {
-			moviendo = true;
-			if (!mueveDerecha) {
-				this.transform.Rotate (Vector3.up,this.transform.rotation.y+180,Space.World);	
-				mueveDerecha = true;
-			}
-			this.GetComponent<Animator> ().SetBool ("isSaltando", false);
-			this.GetComponent<Animator> ().SetBool ("isCaminando", true);
-		}
-		if (!Input.GetKey (KeyCode.LeftArrow) || !Input.GetKey (KeyCode.RightArrow)) {
-			if (Input.GetKey (KeyCode.Space)) {
-					this.GetComponent<Animator> ().SetBool ("isCaminando", false);
-					this.GetComponent<Animator> ().SetBool ("isSaltando", true);
-			} else {
-					this.GetComponent<Animator> ().SetBool ("isCaminando", false);
-					this.GetComponent<Animator> ().SetBool ("isSaltando", false);
-			}
-		}
-*/
+
 	}
 
-	public float maxSpeed = 5f;
+	public float maxSpeed = 1f;
 	public bool derecha = false;
 	void FixedUpdate () {
 		sentar();
@@ -92,6 +65,8 @@ public class EstadosGato : MonoBehaviour {
 		this.GetComponent<Animator> ().SetBool ("isCaminando", true);
 	}
 
+
+	// flipa el gato
 	void Flip()	{
 		derecha = !derecha;
 		Vector3 theScale = transform.localScale;
