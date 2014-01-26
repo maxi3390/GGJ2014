@@ -6,9 +6,18 @@ public class Rotation : MonoBehaviour {
 	private float orientation_z = 0.0f;
 	public Transform character;
 	public float velocity;
+
+	private float myTime;
+	private int rotationTime;
+	private bool girando;
+
 	// Use this for initialization
 	void Start () {
 		quat_dest = transform.rotation;
+
+		myTime = 0f;
+		girando = false;
+		rotationTime = 4;
 	}
 
 	// Update is called once per frame
@@ -25,13 +34,20 @@ public class Rotation : MonoBehaviour {
 
 
 		//this.transform.Rotate (Vector3.forward,(int) this.transform.rotation.z + (Time.deltaTime * 30.0f), Space.World);
-		if (Input.GetKeyDown (KeyCode.R)) {
-			//this.gameObject.GetComponent<AudioSource> ().Play ();
-			orientation_z += 90.0f * Mathf.Pow(-1,sentidoDeGiro);
-			if (Mathf.Abs(orientation_z - 360.0f) < Mathf.Epsilon)
-				orientation_z = 0.0f;
-			quat_dest = Quaternion.AngleAxis(orientation_z, Vector3.forward);
-		}
+		//if (Input.GetKeyDown (KeyCode.R))
+		myTime += Time.deltaTime;
+		Debug.Log (myTime - rotationTime);
+		if ((myTime - rotationTime) > 0 && !girando) {
+				//this.gameObject.GetComponent<AudioSource> ().Play ();
+				orientation_z += 90.0f * Mathf.Pow (-1, sentidoDeGiro);
+				if (Mathf.Abs (orientation_z - 360.0f) < Mathf.Epsilon)
+						orientation_z = 0.0f;
+				quat_dest = Quaternion.AngleAxis (orientation_z, Vector3.forward);
+				girando = true;
+			myTime = 0f;
+				
+		} else
+				girando = false;
 	}
-	// culo
+
 }
