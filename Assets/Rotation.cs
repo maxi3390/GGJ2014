@@ -26,7 +26,7 @@ public class Rotation : MonoBehaviour {
 
 		//this.transform.Rotate (Vector3.forward,(int) this.transform.rotation.z + (Time.deltaTime * 30.0f), Space.World);
 		if (Input.GetKeyDown (KeyCode.R)) {
-			this.gameObject.GetComponent<AudioSource> ().Play ();
+			//this.gameObject.GetComponent<AudioSource> ().Play ();
 			orientation_z += 90.0f * Mathf.Pow(-1,sentidoDeGiro);
 			if (Mathf.Abs(orientation_z - 360.0f) < Mathf.Epsilon)
 				orientation_z = 0.0f;
