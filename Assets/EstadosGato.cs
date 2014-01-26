@@ -2,13 +2,23 @@
 using System.Collections;
 
 public class EstadosGato : MonoBehaviour {
-
+	private bool inContactWithWall;
 	//private bool mueveDerecha = false;
 	//private bool moviendo = false;
-
 	// Use this for initialization
 	void Start () {
-	
+		inContactWithWall = true;
+	}
+
+	void OnCollisionEnter2D(Collision2D collision) {
+		// print (collision.collider.name);
+		// Debug.Log("ENTER COLLISION");
+		inContactWithWall = true;
+	}
+
+	void OnCollisionExit2D(Collision2D collision) {
+		//Debug.Log("EXIT COLLISION");
+		inContactWithWall = false;
 	}
 	
 	// Update is called once per frame
@@ -16,7 +26,7 @@ public class EstadosGato : MonoBehaviour {
 
 	}
 
-	public float maxSpeed = 1f;
+	public float maxSpeed;
 	public bool derecha = false;
 	void FixedUpdate () {
 		sentar();
@@ -30,7 +40,9 @@ public class EstadosGato : MonoBehaviour {
 				Flip();
 			}
 			if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey (KeyCode.RightArrow)) {
+				// camina y se fija si salta
 				caminar();
+				saltar();
 			}
 
 			// Si el gato no se mueve puede estar quieto o saltando:
@@ -45,7 +57,7 @@ public class EstadosGato : MonoBehaviour {
 	}
 
 	void saltar() {
-		if (Input.GetKeyDown (KeyCode.Space) && !this.GetComponent<Animator>().GetBool("isSaltando")) {
+		if (Input.GetKeyDown (KeyCode.Space) && inContactWithWall) {
 			rigidbody2D.AddForce (Vector2.up * 300f);
 		}
 		this.GetComponent<Animator> ().SetBool ("isCaminando", false);
@@ -55,10 +67,12 @@ public class EstadosGato : MonoBehaviour {
 	void sentar() {
 		this.GetComponent<Animator> ().SetBool ("isCaminando", false);
 		this.GetComponent<Animator> ().SetBool ("isSaltando", false);
+		//print ("SE SIENTA");
 	}
 
 	void caminar () {
 		this.GetComponent<Animator> ().SetBool ("isCaminando", true);
+
 	}
 
 

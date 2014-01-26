@@ -17,10 +17,10 @@ public class Rotation : MonoBehaviour {
 		int sentidoDeGiro = Random.Range (0, 9);
 		this.transform.rotation = Quaternion.Slerp (this.transform.rotation, quat_dest, 0.03f);
 		this.character.rotation = Quaternion.Slerp (this.character.rotation,
-		new Quaternion(this.character.rotation.x,this.character.rotation.y,this.character.rotation.z,-this.character.rotation.w), 0.03f);
+		                                            new Quaternion(this.character.rotation.x,this.character.rotation.y,this.character.rotation.z,-this.character.rotation.w), 0.03f);
 
 		//this.transform.Rotate (Vector3.forward,(int) this.transform.rotation.z + (Time.deltaTime * 30.0f), Space.World);
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.R)) {
 			orientation_z += 90.0f * Mathf.Pow(-1,sentidoDeGiro);
 			if (Mathf.Abs(orientation_z - 360.0f) < Mathf.Epsilon)
 				orientation_z = 0.0f;
