@@ -4,12 +4,13 @@ using System.Collections;
 public class Timer2 : MonoBehaviour {
 
 	// Use this for initialization
+	public float myTimer2;
+
 	void Start () {
-	
+		myTimer2 = 60f;
 	}
 	
 	// Update is called once per frame
-	public float myTimer2 = 3600f;
 
 	void Update () {
 		if(myTimer2 > 0){
@@ -20,7 +21,7 @@ public class Timer2 : MonoBehaviour {
 		}
 
 
-		GameObject.Find ("Text").guiText.text = "Timer: "+ myTimer2.ToString("F2");
+		GameObject.Find ("Text").guiText.text = "Tiempo restante: "+ myTimer2.ToString("F2");
 	}
 
 
