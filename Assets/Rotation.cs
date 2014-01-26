@@ -21,9 +21,12 @@ public class Rotation : MonoBehaviour {
 		this.transform.rotation = Quaternion.Slerp (this.transform.rotation, quat_dest, velocity);
 		this.character.rotation = Quaternion.Slerp (this.character.rotation,
 		                                            new Quaternion(this.character.rotation.x,this.character.rotation.y,this.character.rotation.z,-this.character.rotation.w), velocity);
+		
+
 
 		//this.transform.Rotate (Vector3.forward,(int) this.transform.rotation.z + (Time.deltaTime * 30.0f), Space.World);
 		if (Input.GetKeyDown (KeyCode.R)) {
+			this.gameObject.GetComponent<AudioSource> ().Play ();
 			orientation_z += 90.0f * Mathf.Pow(-1,sentidoDeGiro);
 			if (Mathf.Abs(orientation_z - 360.0f) < Mathf.Epsilon)
 				orientation_z = 0.0f;

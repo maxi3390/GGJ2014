@@ -25,7 +25,7 @@ public class EstadosGato : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision) {
 		// print (collision.collider.name);
-		 //Debug.Log("ENTER COLLISION");
+		// Debug.Log("ENTER COLLISION");
 		//inContactWithWall = true;
 
 		foreach (ContactPoint2D contact in collision.contacts) 
@@ -127,6 +127,7 @@ public class EstadosGato : MonoBehaviour {
 					saltar();
 				} else {
 					sentar();
+					//this.gameObject.GetComponent<AudioSource> ().Play ();
 				}
 			}
 		}
@@ -143,6 +144,9 @@ public class EstadosGato : MonoBehaviour {
 	}
 
 	void sentar() {
+
+
+
 		this.GetComponent<Animator> ().SetBool ("isCaminando", false);
 		this.GetComponent<Animator> ().SetBool ("isSaltando", false);
 		//print ("SE SIENTA");
@@ -156,7 +160,7 @@ public class EstadosGato : MonoBehaviour {
 	}
 
 	void caminar () {
-		this.GetComponent<Animator> ().SetBool("isCaminando", true);
+		this.GetComponent<Animator> ().SetBool ("isCaminando", true);
 
 	}
 
