@@ -36,7 +36,6 @@ public class Rotation : MonoBehaviour {
 		//this.transform.Rotate (Vector3.forward,(int) this.transform.rotation.z + (Time.deltaTime * 30.0f), Space.World);
 		//if (Input.GetKeyDown (KeyCode.R))
 		myTime += Time.deltaTime;
-		Debug.Log (myTime - rotationTime);
 		if ((myTime - rotationTime) > 0 && !girando) {
 				//this.gameObject.GetComponent<AudioSource> ().Play ();
 				orientation_z += 90.0f * Mathf.Pow (-1, sentidoDeGiro);
