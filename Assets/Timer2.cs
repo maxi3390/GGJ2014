@@ -7,7 +7,6 @@ public class Timer2 : MonoBehaviour {
 	public float myTimer2;
 
 	void Start () {
-		myTimer2 = 60f;
 	}
 	
 	// Update is called once per frame
@@ -19,7 +18,7 @@ public class Timer2 : MonoBehaviour {
 		}
 		if(myTimer2 <= 0){
 			Debug.Log("GAME OVER");
-			//Application.LoadLevel("gameOver");
+			Application.LoadLevel("gameOver");
 		}
 
 
