@@ -47,7 +47,7 @@ public class EstadosGato : MonoBehaviour {
 	}
 
 	void saltar() {
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.Space) && !this.GetComponent<Animator>().GetBool("isSaltando")) {
 			rigidbody2D.AddForce (Vector2.up * 300f);
 		}
 		this.GetComponent<Animator> ().SetBool ("isCaminando", false);
