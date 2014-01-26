@@ -45,11 +45,7 @@ public class EstadosGato : MonoBehaviour {
 	}
 
 	void saltar() {
-		/*Vector2 v0 = new Vector2 (0f, 500f);
-		float t = Time.deltaTime;
-		v0.y = v0.y*t-0.5f*50f*(t*t);
-		rigidbody2D.velocity = new Vector2 (0,(float) v0.y);*/
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.Space) && !this.GetComponent<Animator>().GetBool("isSaltando")) {
 			rigidbody2D.AddForce (Vector2.up * 300f);
 		}
 		this.GetComponent<Animator> ().SetBool ("isCaminando", false);
@@ -75,5 +71,3 @@ public class EstadosGato : MonoBehaviour {
 	}
 
 }
-
-		
