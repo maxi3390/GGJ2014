@@ -51,6 +51,7 @@ public class EstadosGato : MonoBehaviour {
 					saltar();
 				} else {
 					sentar();
+					this.gameObject.GetComponent<AudioSource> ().Play ();
 				}
 			}
 		}
@@ -65,6 +66,9 @@ public class EstadosGato : MonoBehaviour {
 	}
 
 	void sentar() {
+
+
+
 		this.GetComponent<Animator> ().SetBool ("isCaminando", false);
 		this.GetComponent<Animator> ().SetBool ("isSaltando", false);
 		//print ("SE SIENTA");
