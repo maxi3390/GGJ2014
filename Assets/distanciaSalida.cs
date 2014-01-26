@@ -7,11 +7,12 @@ public class distanciaSalida : MonoBehaviour {
 	public Light luz;								// traemos la luz
 	public float minimaDistancia = float.MinValue;
 	public Camera camara;							// traemos la camara
+	public string nextLevel;
 	private TiltShiftHdr efecto;
 
 	// Use this for initialization
 	void Start () {
-		efecto = camara.GetComponent <TiltShiftHdr> ()/* as TiltShiftHdr*/;
+		efecto = camara.GetComponent <TiltShiftHdr> ();
 		efecto.enabled = true;
 	}
 
@@ -43,6 +44,6 @@ public class distanciaSalida : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.CompareTag ("Player"))
-				Application.LoadLevel ("winGame");
+				Application.LoadLevel (nextLevel);
 	}
 }

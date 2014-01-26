@@ -17,7 +17,6 @@ public class Timer2 : MonoBehaviour {
 			GameObject.Find ("Text").guiText.text = "Tiempo restante: "+ myTimer2.ToString("F2");
 		}
 		if(myTimer2 <= 0){
-			Debug.Log("GAME OVER");
 			Application.LoadLevel("gameOver");
 		}
 
