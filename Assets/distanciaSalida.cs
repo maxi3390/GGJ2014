@@ -30,7 +30,7 @@ public class distanciaSalida : MonoBehaviour {
 		float intensidad = (1 / (distancia));
 		if (intensidad > 1)
 			luz.intensity = 1;
-		else
+		elserr
 			luz.intensity = intensidad;
 
 		if (Input.GetKeyDown (KeyCode.E)) {
